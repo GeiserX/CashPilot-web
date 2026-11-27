@@ -1,8 +1,10 @@
 // Fetches everything the site shows from GitHub and Docker Hub. Used at build
 // time (src/data/index.ts) and by `bun run data:snapshot`, which writes the
 // committed fallback in src/data/snapshot.json.
+import { createHash } from "node:crypto";
 import { parse as parseYaml } from "yaml";
 import pins from "./pins.json";
+import { LOCALES, DEFAULT_LOCALE } from "../i18n/locales";
 
 export const OWNER = "GeiserX";
 export const REPOS = {
@@ -46,9 +48,22 @@ export interface Release {
   assets: Asset[];
 }
 
+/**
+ * Translated catalog strings, by locale code, then by catalog key
+ * (`<slug>.<YAML path>`, e.g. `iproyal.payment.minimum_payout`). Holds only
+ * translations whose source hash matches today's English, so a stale or
+ * missing one shows English.
+ */
+export type CatalogI18n = Record<string, Record<string, string>>;
+
+/** The catalog fields the site shows, as YAML paths inside a service file. */
+export const CATALOG_I18N_FIELDS = ["referral.bonus.referee", "payment.minimum_payout"] as const;
+export type CatalogField = (typeof CATALOG_I18N_FIELDS)[number];
+
 export interface SiteData {
   fetchedAt: string;
   services: Service[];
+  catalogI18n: CatalogI18n;
   stars: Record<RepoKey, number>;
   pulls: { ui: number; worker: number };
   releases: Record<"web" | "desktop" | "android" | "mcp", Release>;
@@ -132,14 +147,56 @@ export function toService(d: any): Service {
   };
 }
 
-export async function fetchServices(): Promise<Service[]> {
+/** First 12 hex characters of SHA-256 over the UTF-8 English string: the catalog's `source` hash. */
+export const sourceHash = (english: string) => createHash("sha256").update(english, "utf8").digest("hex").slice(0, 12);
+
+function atPath(doc: any, path: string): unknown {
+  return path.split(".").reduce((cur, k) => (cur && typeof cur === "object" ? cur[k] : undefined), doc);
+}
+
+/**
+ * Keeps the entries of one `services/_i18n/<locale>.yml` that are fresh: a
+ * non-empty `text` whose `source` hash matches the English string in today's
+ * service file. Everything else falls back to English.
+ */
+export function freshTranslations(file: unknown, english: Map<string, string>): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (!file || typeof file !== "object") return out;
+  for (const [key, entry] of Object.entries(file as Record<string, any>)) {
+    const en = english.get(key);
+    const text = typeof entry?.text === "string" ? entry.text.trim() : "";
+    if (en !== undefined && text && entry.source === sourceHash(en)) out[key] = text;
+  }
+  return out;
+}
+
+/**
+ * The catalog and its translations. Translations live beside the service files
+ * in `services/_i18n/<locale>.yml`; a locale without a file has none yet, which
+ * is an answer, not a failure.
+ */
+export async function fetchCatalog(): Promise<{ services: Service[]; catalogI18n: CatalogI18n }> {
   const tree = await gh(`repos/${OWNER}/${REPOS.web}/git/trees/main?recursive=1`);
-  const paths: string[] = tree.tree
-    .map((t: any) => t.path as string)
-    .filter((p: string) => /^services\/[^_/][^/]*\/[^/]+\.ya?ml$/.test(p));
+  const all: string[] = tree.tree.map((t: any) => t.path as string);
+  const paths = all.filter((p) => /^services\/[^_/][^/]*\/[^/]+\.ya?ml$/.test(p));
   if (paths.length < 10) throw new Error(`catalog looks empty (${paths.length} files)`);
   const docs = await pool(paths, 6, async (p) => parseYaml(await raw(REPOS.web, "main", p)));
-  return docs.map(toService).sort((a, b) => a.name.localeCompare(b.name, "en"));
+  const services = docs.map(toService).sort((a, b) => a.name.localeCompare(b.name, "en"));
+
+  // The English strings, exactly as the YAML parser returns them.
+  const english = new Map<string, string>();
+  for (const d of docs)
+    for (const field of CATALOG_I18N_FIELDS) {
+      const v = atPath(d, field);
+      if (typeof v === "string") english.set(`${d.slug}.${field}`, v);
+    }
+  const catalogI18n: CatalogI18n = {};
+  const targets = LOCALES.filter((l) => l.code !== DEFAULT_LOCALE && all.includes(`services/_i18n/${l.code}.yml`));
+  await pool(targets, 6, async (l) => {
+    const fresh = freshTranslations(parseYaml(await raw(REPOS.web, "main", `services/_i18n/${l.code}.yml`)), english);
+    if (Object.keys(fresh).length) catalogI18n[l.code] = fresh;
+  });
+  return { services, catalogI18n };
 }
 
 /**
@@ -194,8 +251,8 @@ export async function fetchLive(log: (m: string) => void = console.warn): Promis
     }
   };
 
-  const [services, starsList, pullsUi, pullsWorker, web, desktop, android, mcp] = await Promise.all([
-    attempt("catalog", fetchServices),
+  const [catalog, starsList, pullsUi, pullsWorker, web, desktop, android, mcp] = await Promise.all([
+    attempt("catalog", fetchCatalog),
     attempt("stars", async () =>
       Object.fromEntries(
         await Promise.all(
@@ -227,7 +284,10 @@ export async function fetchLive(log: (m: string) => void = console.warn): Promis
   });
 
   const out: Partial<SiteData> = { fetchedAt: new Date().toISOString() };
-  if (services) out.services = services;
+  if (catalog) {
+    out.services = catalog.services;
+    out.catalogI18n = catalog.catalogI18n;
+  }
   if (starsList) out.stars = starsList;
   if (pullsUi !== undefined && pullsWorker !== undefined) out.pulls = { ui: pullsUi, worker: pullsWorker };
   // The releases, their checksums and the compose images go together or not at

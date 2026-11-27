@@ -41,7 +41,9 @@ bun run overflow       # fails when a page scrolls sideways, from 320 to 1440 px
 
 Every visible string lives in `src/i18n/<locale>.json`, with the same keys as `en.json`. `en.json` is frozen: translators add locale files only. The 20 locales are listed in `src/i18n/locales.ts`. A locale is built when its file exists, at `/<locale>/` (English at `/`). A key missing from a locale shows in English, and `i18n:check` lists it. Keep `{placeholders}`, HTML tags and link targets exactly as in English: the check fails otherwise.
 
-The picker shows once a second locale exists. It remembers the choice in `localStorage` only. The site suggests the stored language, or else the browser's, when the page exists in it, and never redirects.
+The picker shows once a second locale exists. It remembers the choice in `localStorage` only. On the first visit to an English page, a small inline script sends the visitor to the best match for the browser's languages (`es-MX` gets `es`, `pt-PT` gets `pt-BR`). After that, a stored choice wins and the browser language is only suggested. Bots, visitors without JavaScript and browsers that block storage get English.
+
+Service strings from the catalog (the bonus and the minimum payout) are translated in CashPilot's `services/_i18n/<locale>.yml` and read at build time with the catalog. A translation whose source hash no longer matches the English string, or that drops a referral code the English names, shows English.
 
 ## Layout
 

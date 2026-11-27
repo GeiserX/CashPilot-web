@@ -26,6 +26,7 @@ import desktopImg from "../../assets/shots/desktop-dashboard.png";
 import desktopCrop from "../../assets/shots/desktop-crop.png";
 import androidImg from "../../assets/shots/android-home.png";
 import androidCrop from "../../assets/shots/android-crop.png";
+import { catalogText } from "../../lib/catalog-text";
 
 export const getStaticPaths = () => localeParams();
 
@@ -371,6 +372,7 @@ const faqVars = {
               featured.map((s) => {
                 const ref = isReferral(s);
                 const payout = s.paymentMethods.map((m) => t(`payment.${m}`)).join(", ");
+                const minimum = catalogText(data, t, s, "payment.minimum_payout");
                 return (
                   <tr>
                     <th scope="row">
@@ -395,7 +397,7 @@ const faqVars = {
                       {payout || <NotStated t={t} />}
                     </td>
                     <td class="wrap" data-label={t("home.services.col.minimum")}>
-                      {s.minimumPayout ?? <NotStated t={t} />}
+                      {minimum ? <span lang={minimum.lang}>{minimum.text}</span> : <NotStated t={t} />}
                     </td>
                     <td class="signup">
                       {s.signupUrl && (

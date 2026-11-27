@@ -7,11 +7,13 @@ import { localeFromPath, localeParams, useT } from "../../i18n";
 import { getData, isLive, isReferral } from "../../data";
 import { docs } from "../../lib/links";
 import { CATEGORY_ORDER, categoryIcon } from "../../lib/catalog";
+import { catalogText } from "../../lib/catalog-text";
 
 export const getStaticPaths = () => localeParams();
 const t = useT(localeFromPath(Astro.params.locale));
 const data = await getData();
 const referrals = data.services.filter((s) => isLive(s) && isReferral(s));
+const bonus = (s: (typeof referrals)[number]) => catalogText(data, t, s, "referral.bonus.referee");
 const groups = CATEGORY_ORDER.map((key) => ({
   key,
   services: referrals.filter((s) => s.category === key),
@@ -81,8 +83,8 @@ const groups = CATEGORY_ORDER.map((key) => ({
                     <td class:list={{ "ref__empty": !s.code }} data-label={t("referrals.code")}>
                       {s.code && <code dir="ltr">{s.code}</code>}
                     </td>
-                    <td class:list={{ "ref__empty": !s.bonusReferee }} data-label={t("referrals.youGet")} lang={s.bonusReferee ? "en" : undefined}>
-                      {s.bonusReferee}
+                    <td class:list={{ "ref__empty": !s.bonusReferee }} data-label={t("referrals.youGet")} lang={bonus(s)?.lang}>
+                      {bonus(s)?.text}
                     </td>
                     <td class="ref__links">
                       <a href={s.signupUrl} rel="sponsored noopener">
