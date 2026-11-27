@@ -21,8 +21,8 @@ export default defineConfig({
   devToolbar: { enabled: false },
   integrations: [
     sitemap({
-      // /en/... only redirects to /, and the 404 page is not a page to list.
-      filter: (page) => !/\/en\//.test(new URL(page).pathname) && !/\/404\/?$/.test(page),
+      // /en/... and /zh-cn/... only redirect, and the 404 page is not a page to list.
+      filter: (page) => !/^\/(en|zh-cn)\//.test(new URL(page).pathname) && !/\/404\/?$/.test(page),
       i18n: { defaultLocale: "en", locales: sitemapLocales },
     }),
   ],

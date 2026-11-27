@@ -1,0 +1,30 @@
+---
+// Simplified Chinese moved from /zh-cn/ to /zh-hans/ when its code became
+// zh-Hans. The old paths stay as meta-refresh pages with a canonical link,
+// which GitHub Pages can serve, so links shared before the move still work.
+import { OSES } from "../../lib/catalog";
+
+export function getStaticPaths() {
+  const routes = ["", "download", ...OSES.map((o) => `download/${o}`), "referrals", "privacy", "disclaimer"];
+  return routes.map((r) => ({ params: { path: r || undefined } }));
+}
+const target = Astro.params.path ? `/zh-hans/${Astro.params.path}/` : "/zh-hans/";
+---
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CashPilot</title>
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href={new URL(target, "https://cashpilot.club").href} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <style>
+      html { background: #07070c; color: #ededf4; font-family: system-ui, sans-serif; }
+      a { color: #fb7185; }
+    </style>
+  </head>
+  <body>
+    <p><a href={target}>{new URL(target, "https://cashpilot.club").href}</a></p>
+  </body>
+</html>

@@ -31,7 +31,7 @@ export const LOCALES: Locale[] = [
   { code: "id", ogLocale: "id_ID", path: "id", name: "Bahasa Indonesia", dir: "ltr", font: "brand" },
   { code: "vi", ogLocale: "vi_VN", path: "vi", name: "Tiếng Việt", dir: "ltr", font: "system" },
   { code: "th", ogLocale: "th_TH", path: "th", name: "ไทย", dir: "ltr", font: "system" },
-  { code: "zh-CN", ogLocale: "zh_CN", path: "zh-cn", name: "简体中文", dir: "ltr", font: "system" },
+  { code: "zh-Hans", ogLocale: "zh_CN", path: "zh-hans", name: "简体中文", dir: "ltr", font: "system" },
   { code: "ja", ogLocale: "ja_JP", path: "ja", name: "日本語", dir: "ltr", font: "system" },
   { code: "ko", ogLocale: "ko_KR", path: "ko", name: "한국어", dir: "ltr", font: "system" },
   { code: "fil", ogLocale: "fil_PH", path: "fil", name: "Filipino", dir: "ltr", font: "brand" },
