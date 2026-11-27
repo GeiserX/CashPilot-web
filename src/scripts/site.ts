@@ -1,7 +1,7 @@
 // The only JavaScript on every page: the language picker, the language
-// suggestion and the copy buttons. Everything works without it.
-
-const STORE_KEY = "cashpilot.lang";
+// suggestion and the copy buttons. Everything works without it. The
+// first-visit redirect runs earlier, inline in the <head> (lang-redirect.ts).
+import { LANG_ALIASES, STORE_KEY } from "../lib/lang-keys";
 
 function store(code: string) {
   try {
@@ -36,10 +36,10 @@ for (const picker of document.querySelectorAll<HTMLDetailsElement>("[data-lang-p
   });
 }
 
-// Language suggestion. Never redirects. A visitor who picked a language before
-// is offered that language again when this page is in another one. A visitor
-// who never picked is offered their browser's language, when the page exists
-// in it.
+// Language suggestion, for the visits the first-visit redirect leaves alone. A
+// visitor who picked a language before is offered that language again when
+// this page is in another one. A visitor who never picked is offered their
+// browser's language, when the page exists in it.
 const suggest = document.querySelector<HTMLElement>("[data-lang-suggest]");
 if (suggest) {
   const offers = JSON.parse(suggest.querySelector("script")!.textContent || "{}") as Record<
@@ -53,7 +53,10 @@ if (suggest) {
     match = saved in offers ? saved : undefined;
   } else {
     const codes = [current, ...Object.keys(offers)];
-    const base = (c: string) => c.split("-")[0]!.toLowerCase();
+    const base = (c: string) => {
+      const b = c.split("-")[0]!.toLowerCase();
+      return LANG_ALIASES[b] ?? b;
+    };
     // The visitor's first preference that this page exists in, exact match first.
     for (const pref of navigator.languages?.length ? navigator.languages : [navigator.language]) {
       match = codes.find((c) => c.toLowerCase() === pref.toLowerCase()) ?? codes.find((c) => base(c) === base(pref));
