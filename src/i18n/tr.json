@@ -33,12 +33,12 @@
     "more": "Referans bağlantıları nasıl çalışır"
   },
   "home": {
-    "title": "CashPilot: Pasif gelir hizmetlerini kendi donanımınızda çalıştırın",
-    "description": "Bant genişliği paylaşımı, DePIN, GPU hesaplama ve madencilik hizmetlerini kendi makinelerinizde çalıştıran ve tüm ödemeleri tek bir panelde gösteren ücretsiz, açık kaynaklı yazılım.",
+    "title": "CashPilot: her kazanç hizmeti, her makine, tek bir görünüm",
+    "description": "Bant genişliği paylaşımı, DePIN, madencilik, GPU ve depolama hizmetlerini kendi makinelerinizde çalıştıran, onları varsayılan olarak ev ağınızdan uzak tutan ve tüm ödemeleri tek bir panelde gösteren ücretsiz, açık kaynaklı yazılım.",
     "hero": {
       "pill": "Ücretsiz ve açık kaynak, GPL-3.0",
       "title": "Boşta duran donanımınızı değerlendirin. Tüm ödemeleri tek bir panelde görün.",
-      "lead": "CashPilot, pasif gelir hizmetlerini bilgisayarlarınıza, ev sunucularınıza ve Raspberry Pi'nize kurar. Her sağlayıcıdaki bakiyenizi okur ve geçmişi tek bir yerde, kendi makinenizde saklar.",
+      "lead": "CashPilot; bant genişliği paylaşımı, DePIN, madencilik, GPU ve depolama hizmetlerini bilgisayarlarınıza, ev sunucularınıza ve Raspberry Pi'nize kurar. Yeni bir Docker kurulumunda, başlattığı hizmetler yerel ağınıza (LAN), yönlendiricinize ve üzerinde çalıştıkları makineye erişemez. Her sağlayıcıdaki bakiyenizi okur ve geçmişi tek bir yerde, kendi makinenizde saklar.",
       "download": "İndir",
       "selfhost": "Docker ile kendiniz barındırın",
       "expect": "CashPilot size ödeme yapmaz. Ödemeyi sağlayıcılar yapar. Kazanç; ülkenize, bağlantınıza ve donanımınıza bağlıdır.",

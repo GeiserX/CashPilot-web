@@ -7,10 +7,12 @@
 <p align="center">
   <a href="https://github.com/GeiserX/CashPilot-web/actions/workflows/pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/GeiserX/CashPilot-web/pages.yml?style=flat-square&label=deploy" alt="Deploy"></a>
   <a href="https://github.com/GeiserX/CashPilot-web/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/GeiserX/CashPilot-web/ci.yml?style=flat-square&label=CI" alt="CI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue?style=flat-square" alt="License: GPL-3.0-or-later"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/GeiserX/CashPilot-web?style=flat-square" alt="License"></a>
 </p>
 
-The website of [CashPilot](https://github.com/GeiserX/CashPilot): a landing page, downloads for every system, the referral disclosure, privacy and disclaimer pages. Static, dark only, no cookies, no analytics, and no request to any other host at runtime.
+<p align="center"><strong>Every earner, every box, one view.</strong></p>
+
+The source of https://cashpilot.club, the website of [CashPilot](https://github.com/GeiserX/CashPilot). CashPilot is a self-hosted dashboard for bandwidth sharing, DePIN, mining, GPU compute and storage earners: it keeps them off your home network by default and tracks them across servers, desktops and phones. The site has a landing page, downloads for every system, the referral disclosure, and the privacy and disclaimer pages. It is static and dark only, with no cookies, no analytics and no request to any other host at runtime.
 
 ## Build
 

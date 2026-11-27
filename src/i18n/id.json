@@ -33,12 +33,12 @@
     "more": "Cara kerja referral"
   },
   "home": {
-    "title": "CashPilot: jalankan layanan penghasilan pasif di perangkat Anda sendiri",
-    "description": "Perangkat lunak gratis dan open source yang menjalankan layanan berbagi bandwidth, DePIN, komputasi GPU, dan mining di mesin Anda sendiri, serta menampilkan semua pembayaran di satu dasbor.",
+    "title": "CashPilot: setiap layanan penghasil, setiap mesin, satu tampilan",
+    "description": "Perangkat lunak gratis dan open source yang menjalankan layanan berbagi bandwidth, DePIN, mining, GPU, dan penyimpanan di mesin Anda sendiri, menjauhkannya dari jaringan rumah Anda secara default, serta menampilkan semua pembayaran di satu dasbor.",
     "hero": {
       "pill": "Gratis dan open source, GPL-3.0",
       "title": "Manfaatkan perangkat Anda yang menganggur. Lihat semua pembayaran di satu dasbor.",
-      "lead": "CashPilot memasang layanan penghasilan pasif di komputer, server rumahan, dan Raspberry Pi Anda. CashPilot membaca saldo Anda dari setiap penyedia dan menyimpan riwayatnya di satu tempat, di mesin Anda sendiri.",
+      "lead": "CashPilot memasang layanan berbagi bandwidth, DePIN, mining, GPU, dan penyimpanan di komputer, server rumahan, dan Raspberry Pi Anda. Pada instalasi Docker yang baru, layanan yang dijalankannya tidak bisa menjangkau LAN, router, atau mesin tempat layanan itu berjalan. CashPilot membaca saldo Anda dari setiap penyedia dan menyimpan riwayatnya di satu tempat, di mesin Anda sendiri.",
       "download": "Unduh",
       "selfhost": "Self-host dengan Docker",
       "expect": "CashPilot tidak membayar Anda. Yang membayar adalah penyedianya. Penghasilan bergantung pada negara, koneksi, dan perangkat Anda.",

@@ -33,12 +33,12 @@
     "more": "Como funcionam as indicações"
   },
   "home": {
-    "title": "CashPilot: rode serviços de renda passiva no seu próprio hardware",
-    "description": "Software livre e de código aberto que roda serviços de compartilhamento de banda, DePIN, computação em GPU e mineração nas suas próprias máquinas, e mostra todos os pagamentos em um só painel.",
+    "title": "CashPilot: cada serviço que rende, cada máquina, uma só visão",
+    "description": "Software livre e de código aberto que roda serviços de compartilhamento de banda, DePIN, mineração, GPU e armazenamento nas suas próprias máquinas, os mantém fora da sua rede de casa por padrão e mostra todos os pagamentos em um só painel.",
     "hero": {
       "pill": "Livre e de código aberto, GPL-3.0",
       "title": "Coloque seu hardware parado para trabalhar. Veja todos os pagamentos em um só painel.",
-      "lead": "O CashPilot configura serviços de renda passiva nos seus computadores, servidores caseiros e Raspberry Pi. Ele lê o seu saldo em cada provedor e guarda o histórico em um só lugar, na sua própria máquina.",
+      "lead": "O CashPilot configura serviços de compartilhamento de banda, DePIN, mineração, GPU e armazenamento nos seus computadores, servidores caseiros e Raspberry Pi. Em uma instalação nova do Docker, os serviços que ele inicia não conseguem acessar sua rede local, seu roteador nem a máquina em que rodam. Ele lê o seu saldo em cada provedor e guarda o histórico em um só lugar, na sua própria máquina.",
       "download": "Baixar",
       "selfhost": "Rode no seu servidor com Docker",
       "expect": "O CashPilot não paga você. Quem paga são os provedores. Os ganhos dependem do seu país, da sua conexão e do seu hardware.",

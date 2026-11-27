@@ -33,12 +33,12 @@
     "more": "Cómo funcionan los referidos"
   },
   "home": {
-    "title": "CashPilot: ejecuta servicios de ingresos pasivos en tu propio hardware",
-    "description": "Software libre y de código abierto que ejecuta servicios de compartir ancho de banda, DePIN, computación con GPU y minería en tus propias máquinas, y muestra todos tus pagos en un solo panel.",
+    "title": "CashPilot: cada servicio que gana, cada máquina, una sola vista",
+    "description": "Software libre y de código abierto que ejecuta servicios de compartir ancho de banda, DePIN, minería, GPU y almacenamiento en tus propias máquinas, los mantiene fuera de tu red de casa por defecto y muestra todos tus pagos en un solo panel.",
     "hero": {
       "pill": "Libre y de código abierto, GPL-3.0",
       "title": "Pon a trabajar el hardware que no usas. Consulta todos tus pagos en un solo panel.",
-      "lead": "CashPilot instala servicios de ingresos pasivos en tus ordenadores, servidores caseros y Raspberry Pi. Lee tu saldo en cada proveedor y guarda el historial en un solo sitio, en tu propia máquina.",
+      "lead": "CashPilot instala servicios de compartir ancho de banda, DePIN, minería, GPU y almacenamiento en tus ordenadores, servidores caseros y Raspberry Pi. En una instalación nueva de Docker, los servicios que arranca no pueden llegar a tu red local, a tu router ni a la máquina en la que funcionan. Lee tu saldo en cada proveedor y guarda el historial en un solo sitio, en tu propia máquina.",
       "download": "Descargar",
       "selfhost": "Instálalo en tu servidor con Docker",
       "expect": "CashPilot no te paga. Te pagan los proveedores. Lo que ganes depende de tu país, tu conexión y tu hardware.",

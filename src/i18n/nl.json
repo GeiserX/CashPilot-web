@@ -33,12 +33,12 @@
     "more": "Zo werken verwijzingslinks"
   },
   "home": {
-    "title": "CashPilot: diensten voor passief inkomen op je eigen hardware",
-    "description": "Gratis opensourcesoftware die bandbreedte delen, DePIN, GPU-rekenkracht en mining op je eigen machines draait, en elke uitbetaling in één dashboard toont.",
+    "title": "CashPilot: elke verdiener, elke machine, één overzicht",
+    "description": "Gratis opensourcesoftware die bandbreedte delen, DePIN, mining, GPU en opslag op je eigen machines draait, ze standaard buiten je thuisnetwerk houdt en elke uitbetaling in één dashboard toont.",
     "hero": {
       "pill": "Gratis en open source, GPL-3.0",
       "title": "Zet je ongebruikte hardware aan het werk. Bekijk elke uitbetaling in één dashboard.",
-      "lead": "CashPilot richt diensten voor passief inkomen in op je computers, thuisservers en Raspberry Pi. Het leest je saldo bij elke aanbieder uit en bewaart de geschiedenis op één plek, op je eigen machine.",
+      "lead": "CashPilot richt diensten voor bandbreedte delen, DePIN, mining, GPU en opslag in op je computers, thuisservers en Raspberry Pi. Bij een nieuwe Docker-installatie kunnen de diensten die het start je LAN, je router en de machine waarop ze draaien niet bereiken. Het leest je saldo bij elke aanbieder uit en bewaart de geschiedenis op één plek, op je eigen machine.",
       "download": "Downloaden",
       "selfhost": "Zelf hosten met Docker",
       "expect": "CashPilot betaalt je niet. Dat doen de aanbieders. Je inkomsten hangen af van je land, je verbinding en je hardware.",

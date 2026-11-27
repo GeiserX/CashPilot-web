@@ -33,12 +33,12 @@
     "more": "Paano gumagana ang referral"
   },
   "home": {
-    "title": "CashPilot: magpatakbo ng mga passive income service sa sarili mong hardware",
-    "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, GPU compute at mining service sa sarili mong mga makina, at ipinapakita ang bawat payout sa iisang dashboard.",
+    "title": "CashPilot: bawat kumikitang service, bawat makina, iisang view",
+    "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, mining, GPU at storage service sa sarili mong mga makina, inilalayo ang mga ito sa home network mo bilang default, at ipinapakita ang bawat payout sa iisang dashboard.",
     "hero": {
       "pill": "Libre at open source, GPL-3.0",
       "title": "Pagkakitaan ang hardware mong nakatengga. Tingnan ang bawat payout sa iisang dashboard.",
-      "lead": "Sine-set up ng CashPilot ang mga passive income service sa iyong mga computer, home server at Raspberry Pi. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
+      "lead": "Sine-set up ng CashPilot ang mga bandwidth sharing, DePIN, mining, GPU at storage service sa iyong mga computer, home server at Raspberry Pi. Sa bagong install ng Docker, hindi maaabot ng mga service na pinapatakbo nito ang LAN mo, ang router mo, o ang makinang pinagtatakbuhan nila. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
       "download": "I-download",
       "selfhost": "I-self-host gamit ang Docker",
       "expect": "Hindi ang CashPilot ang nagbabayad sa iyo. Ang mga provider ang nagbabayad. Nakadepende ang kita sa iyong bansa, koneksyon at hardware.",

@@ -33,12 +33,12 @@
     "more": "So funktionieren Empfehlungslinks"
   },
   "home": {
-    "title": "CashPilot: Dienste für passives Einkommen auf deiner eigenen Hardware",
-    "description": "Kostenlose Open-Source-Software, die Bandbreiten-Sharing, DePIN, GPU-Computing und Mining auf deinen eigenen Geräten betreibt und jede Auszahlung in einem Dashboard zeigt.",
+    "title": "CashPilot: jeder Verdiener, jedes Gerät, eine Ansicht",
+    "description": "Kostenlose Open-Source-Software, die Bandbreiten-Sharing, DePIN, Mining, GPU-Computing und Speicher auf deinen eigenen Geräten betreibt, sie standardmäßig von deinem Heimnetz fernhält und jede Auszahlung in einem Dashboard zeigt.",
     "hero": {
       "pill": "Kostenlos und Open Source, GPL-3.0",
       "title": "Lass deine ungenutzte Hardware arbeiten. Alle Auszahlungen in einem Dashboard.",
-      "lead": "CashPilot richtet Dienste für passives Einkommen auf deinen Computern, Heimservern und deinem Raspberry Pi ein. Es liest dein Guthaben bei jedem Anbieter aus und speichert den Verlauf an einem Ort, auf deinem eigenen Gerät.",
+      "lead": "CashPilot richtet Dienste für Bandbreiten-Sharing, DePIN, Mining, GPU-Computing und Speicher auf deinen Computern, Heimservern und deinem Raspberry Pi ein. Bei einer neuen Docker-Installation können die gestarteten Dienste weder dein LAN noch deinen Router noch das Gerät erreichen, auf dem sie laufen. Es liest dein Guthaben bei jedem Anbieter aus und speichert den Verlauf an einem Ort, auf deinem eigenen Gerät.",
       "download": "Herunterladen",
       "selfhost": "Selbst hosten mit Docker",
       "expect": "CashPilot zahlt dir nichts. Das tun die Anbieter. Die Einnahmen hängen von deinem Land, deiner Verbindung und deiner Hardware ab.",

@@ -33,12 +33,12 @@
     "more": "Come funzionano i referral"
   },
   "home": {
-    "title": "CashPilot: esegui servizi di reddito passivo sul tuo hardware",
-    "description": "Software libero e open source che esegue servizi di condivisione della banda, DePIN, calcolo su GPU e mining sulle tue macchine, e mostra tutti i pagamenti in un'unica dashboard.",
+    "title": "CashPilot: ogni servizio che guadagna, ogni macchina, una sola vista",
+    "description": "Software libero e open source che esegue servizi di condivisione della banda, DePIN, mining, GPU e archiviazione sulle tue macchine, li tiene fuori dalla tua rete di casa per impostazione predefinita e mostra tutti i pagamenti in un'unica dashboard.",
     "hero": {
       "pill": "Libero e open source, GPL-3.0",
       "title": "Fai lavorare l'hardware inutilizzato. Controlla tutti i pagamenti in un'unica dashboard.",
-      "lead": "CashPilot configura servizi di reddito passivo sui tuoi computer, server di casa e Raspberry Pi. Legge il tuo saldo presso ogni fornitore e conserva lo storico in un unico posto, sulla tua macchina.",
+      "lead": "CashPilot configura servizi di condivisione della banda, DePIN, mining, GPU e archiviazione sui tuoi computer, server di casa e Raspberry Pi. Su una nuova installazione di Docker, i servizi che avvia non possono raggiungere la tua LAN, il tuo router o la macchina su cui girano. Legge il tuo saldo presso ogni fornitore e conserva lo storico in un unico posto, sulla tua macchina.",
       "download": "Scarica",
       "selfhost": "Self-hosting con Docker",
       "expect": "Non è CashPilot a pagarti, sono i fornitori. I guadagni dipendono dal tuo Paese, dalla tua connessione e dal tuo hardware.",

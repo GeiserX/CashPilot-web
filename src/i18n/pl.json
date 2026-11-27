@@ -33,12 +33,12 @@
     "more": "Jak działają linki polecające"
   },
   "home": {
-    "title": "CashPilot: usługi dochodu pasywnego na twoim własnym sprzęcie",
-    "description": "Darmowe oprogramowanie open source, które uruchamia usługi udostępniania łącza, DePIN, obliczeń GPU i kopania kryptowalut na twoich własnych maszynach i pokazuje wszystkie wypłaty w jednym panelu.",
+    "title": "CashPilot: każda usługa zarobkowa, każda maszyna, jeden widok",
+    "description": "Darmowe oprogramowanie open source, które uruchamia usługi udostępniania łącza, DePIN, kopania kryptowalut, GPU i przestrzeni dyskowej na twoich własnych maszynach, domyślnie odcina je od twojej sieci domowej i pokazuje wszystkie wypłaty w jednym panelu.",
     "hero": {
       "pill": "Darmowe i open source, GPL-3.0",
       "title": "Zaprzęgnij nieużywany sprzęt do pracy. Wszystkie wypłaty w jednym panelu.",
-      "lead": "CashPilot konfiguruje usługi dochodu pasywnego na twoich komputerach, serwerach domowych i Raspberry Pi. Odczytuje twoje saldo u każdego dostawcy i przechowuje historię w jednym miejscu, na twojej własnej maszynie.",
+      "lead": "CashPilot konfiguruje usługi udostępniania łącza, DePIN, kopania kryptowalut, GPU i przestrzeni dyskowej na twoich komputerach, serwerach domowych i Raspberry Pi. Przy nowej instalacji Dockera uruchomione usługi nie mają dostępu do twojej sieci LAN, routera ani maszyny, na której działają. Odczytuje twoje saldo u każdego dostawcy i przechowuje historię w jednym miejscu, na twojej własnej maszynie.",
       "download": "Pobierz",
       "selfhost": "Własny serwer z Dockerem",
       "expect": "CashPilot ci nie płaci. Płacą dostawcy. Zarobki zależą od twojego kraju, łącza i sprzętu.",

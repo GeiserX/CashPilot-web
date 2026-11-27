@@ -33,12 +33,12 @@
     "more": "How referrals work"
   },
   "home": {
-    "title": "CashPilot: run passive income services on your own hardware",
-    "description": "Free, open-source software that runs bandwidth sharing, DePIN, GPU compute and mining services on your own machines, and shows every payout in one dashboard.",
+    "title": "CashPilot: every earner, every box, one view",
+    "description": "Free, open-source software that runs bandwidth sharing, DePIN, mining, GPU and storage services on your own machines, keeps them off your home network by default, and shows every payout in one dashboard.",
     "hero": {
       "pill": "Free and open source, GPL-3.0",
       "title": "Put your idle hardware to work. See every payout in one dashboard.",
-      "lead": "CashPilot sets up passive income services on your computers, home servers and Raspberry Pi. It reads your balance from each provider and keeps the history in one place, on your own machine.",
+      "lead": "CashPilot sets up bandwidth sharing, DePIN, mining, GPU and storage services on your computers, home servers and Raspberry Pi. On a new Docker install, the services it starts cannot reach your LAN, your router or the machine they run on. It reads your balance from each provider and keeps the history in one place, on your own machine.",
       "download": "Download",
       "selfhost": "Self-host with Docker",
       "expect": "CashPilot does not pay you. The providers do. Earnings depend on your country, connection and hardware.",

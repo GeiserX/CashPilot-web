@@ -33,12 +33,12 @@
     "more": "Comment fonctionne le parrainage"
   },
   "home": {
-    "title": "CashPilot : faites tourner des services de revenu passif sur votre propre matériel",
-    "description": "Logiciel libre et open source qui fait tourner des services de partage de bande passante, DePIN, calcul GPU et minage sur vos propres machines, et affiche tous vos paiements dans un seul tableau de bord.",
+    "title": "CashPilot : chaque source de gains, chaque machine, une seule vue",
+    "description": "Logiciel libre et open source qui fait tourner des services de partage de bande passante, DePIN, minage, GPU et stockage sur vos propres machines, les tient à l'écart de votre réseau domestique par défaut et affiche tous vos paiements dans un seul tableau de bord.",
     "hero": {
       "pill": "Libre et open source, GPL-3.0",
       "title": "Faites travailler votre matériel inutilisé. Suivez tous vos paiements dans un seul tableau de bord.",
-      "lead": "CashPilot installe des services de revenu passif sur vos ordinateurs, vos serveurs domestiques et vos Raspberry Pi. Il relève votre solde chez chaque fournisseur et garde l'historique au même endroit, sur votre propre machine.",
+      "lead": "CashPilot installe des services de partage de bande passante, DePIN, minage, GPU et stockage sur vos ordinateurs, vos serveurs domestiques et vos Raspberry Pi. Sur une nouvelle installation de Docker, les services qu'il lance ne peuvent pas atteindre votre réseau local, votre box ni la machine sur laquelle ils tournent. Il relève votre solde chez chaque fournisseur et garde l'historique au même endroit, sur votre propre machine.",
       "download": "Télécharger",
       "selfhost": "Auto-héberger avec Docker",
       "expect": "Ce n'est pas CashPilot qui vous paie, ce sont les fournisseurs. Vos gains dépendent de votre pays, de votre connexion et de votre matériel.",
