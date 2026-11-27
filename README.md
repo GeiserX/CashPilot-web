@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/banner.svg" alt="cashpilot.club" width="100%">
+</p>
+
 <h1 align="center">cashpilot.club</h1>
 
 <p align="center">
