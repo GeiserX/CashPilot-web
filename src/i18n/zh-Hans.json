@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "CashPilot",
     "titleSuffix": "CashPilot",
-    "ogImageAlt": "CashPilot：让闲置的硬件为你赚钱，在一个仪表盘里看到每一笔收益。"
+    "ogImageAlt": "CashPilot：让闲置的硬件运转起来，在一个仪表盘里看到每一笔收益。"
   },
   "nav": {
     "skip": "跳到正文",
@@ -15,8 +15,8 @@
   },
   "lang": {
     "label": "语言",
-    "suggest": "本网站也有英文版。",
-    "switch": "切换到英文",
+    "suggest": "本网站也有简体中文版。",
+    "switch": "切换到简体中文",
     "dismiss": "不用了"
   },
   "common": {
@@ -37,7 +37,7 @@
     "description": "免费的开源软件，在你自己的设备上运行带宽共享、DePIN、挖矿、GPU 和存储服务，默认把它们隔离在你的家庭网络之外，并在一个仪表盘里显示每一笔收益。",
     "hero": {
       "pill": "免费开源，GPL-3.0",
-      "title": "让闲置的硬件为你赚钱。在一个仪表盘里看到每一笔收益。",
+      "title": "让闲置的硬件运转起来。在一个仪表盘里看到每一笔收益。",
       "lead": "CashPilot 帮你在电脑、家用服务器和 Raspberry Pi 上部署带宽共享、DePIN、挖矿、GPU 和存储服务。在全新安装的 Docker 上，它启动的服务无法访问你的局域网、路由器，以及运行这些服务的设备本身。它会从每个服务商读取你的余额，并把历史记录集中保存在你自己的设备上。",
       "download": "下载",
       "selfhost": "用 Docker 自行部署",

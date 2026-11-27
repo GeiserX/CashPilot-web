@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "CashPilot",
     "titleSuffix": "CashPilot",
-    "ogImageAlt": "CashPilot: pagkakitaan ang hardware mong nakatengga at tingnan ang bawat payout sa iisang dashboard."
+    "ogImageAlt": "CashPilot: paganahin ang hardware mong nakatengga at tingnan ang bawat payout sa iisang dashboard."
   },
   "nav": {
     "skip": "Lumaktaw sa nilalaman",
@@ -37,7 +37,7 @@
     "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, mining, GPU at storage service sa sarili mong mga makina, inilalayo ang mga ito sa home network mo bilang default, at ipinapakita ang bawat payout sa iisang dashboard.",
     "hero": {
       "pill": "Libre at open source, GPL-3.0",
-      "title": "Pagkakitaan ang hardware mong nakatengga. Tingnan ang bawat payout sa iisang dashboard.",
+      "title": "Paganahin ang hardware mong nakatengga. Tingnan ang bawat payout sa iisang dashboard.",
       "lead": "Sine-set up ng CashPilot ang mga bandwidth sharing, DePIN, mining, GPU at storage service sa iyong mga computer, home server at Raspberry Pi. Sa bagong install ng Docker, hindi maaabot ng mga service na pinapatakbo nito ang LAN mo, ang router mo, o ang makinang pinagtatakbuhan nila. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
       "download": "I-download",
       "selfhost": "I-self-host gamit ang Docker",
@@ -255,7 +255,7 @@
         "partly": "Bahagya",
         "updaterHardened": "Hindi, pero hinigpitan ang updater nito"
       },
-      "security": "Inuuna ng CashPilot ang seguridad. Hinihigpitan ang bawat service na pinapatakbo nito at, bilang default, hindi nito maaabot ang home network mo. <a href=\"{securityUrl}\">Basahin ang mga default na setting sa seguridad</a>.",
+      "security": "Inuuna ng CashPilot ang seguridad. Hinihigpitan ang bawat service na pinapatakbo nito at, bilang default, hindi maaabot ng mga ito ang home network mo. <a href=\"{securityUrl}\">Basahin ang mga default na setting sa seguridad</a>.",
       "more": "Buong paghahambing, may source sa bawat cell"
     },
     "faq": {

@@ -253,7 +253,7 @@
         "betaMining": "Sì, mining in beta",
         "lanReachable": "No, la tua rete resta raggiungibile",
         "partly": "In parte",
-        "updaterHardened": "No, ma il container degli aggiornamenti è blindato"
+        "updaterHardened": "No, ma il suo sistema di aggiornamento è blindato"
       },
       "security": "In CashPilot la sicurezza viene prima di tutto. Ogni servizio che avvia gira in un container blindato e, per impostazione predefinita, non può raggiungere la tua rete di casa. <a href=\"{securityUrl}\">Leggi le impostazioni di sicurezza predefinite</a>.",
       "more": "Confronto completo con una fonte per ogni cella"
