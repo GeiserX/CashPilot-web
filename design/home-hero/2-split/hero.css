@@ -1,0 +1,377 @@
+/* Home hero, design 2: split. Copy on the left, the product on the right,
+   with three labels pinned to real parts of the screenshot. */
+.sh {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.75rem, 6vw, 5rem);
+}
+.sh__glow {
+  position: absolute;
+  inset: 8% -10% auto 45%;
+  height: 80%;
+  background:
+    radial-gradient(45% 55% at 30% 45%, rgb(251 113 133 / 0.2), transparent 70%),
+    radial-gradient(40% 50% at 70% 35%, rgb(255 152 0 / 0.12), transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.sh__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+/* Copy column */
+.sh__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.sh__pill .icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--accent);
+}
+.sh__title {
+  margin-top: 1.25rem;
+  font-size: clamp(2.25rem, 3.9vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.sh__title > span:first-child {
+  display: block;
+}
+.sh__title-accent {
+  display: inline-block;
+  margin-top: 0.1em;
+  color: var(--accent);
+  background: linear-gradient(95deg, #fb7185 10%, #fdba74 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sh__lead {
+  margin-top: 1.25rem;
+  max-width: 30rem;
+  color: var(--muted);
+  font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
+  line-height: 1.55;
+}
+.sh__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.sh__expect {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-top: 1.1rem;
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.sh__expect .icon {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.1rem;
+  color: var(--faint);
+}
+.sh__proof {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.sh__stats {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  margin: 0;
+}
+.sh__stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.15rem;
+  padding-inline: 1.25rem;
+}
+.sh__stats div:first-child {
+  padding-inline-start: 0;
+}
+.sh__stats div + div {
+  border-inline-start: 1px solid var(--border);
+}
+.sh__stats dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.sh__stats dt {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+.sh__note {
+  margin-top: 0.75rem;
+  color: var(--faint);
+  font-size: 0.75rem;
+}
+
+/* Product column: the window runs past the right edge of the page, the phone
+   overlaps its lower corner. */
+.sh__product {
+  --sh-bleed: 2;
+  position: relative;
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+.sh__stage {
+  position: relative;
+  width: calc(100% * var(--sh-bleed));
+}
+.sh__stage .window {
+  position: relative;
+  mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+}
+.sh__stage .phone {
+  position: absolute;
+  inset-inline-end: calc(100% - 100% / var(--sh-bleed) - 1.5rem);
+  bottom: calc(-1 * clamp(3rem, 7vw, 6rem));
+  width: clamp(150px, 14.5vw, 210px);
+  max-width: none;
+  filter: drop-shadow(0 24px 40px rgb(0 0 0 / 0.7));
+}
+
+/* Labels: each sits on a point of the screenshot (left/top in percent of the
+   image), with a dot, a short line and a chip. */
+.sh__callouts {
+  position: absolute;
+  inset: 35px 1px 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  direction: ltr;
+}
+.sh__callout {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  transform: translate(-6px, -50%);
+}
+.sh__callout--history {
+  left: 22.6%;
+  top: 35.6%;
+}
+.sh__callout--services {
+  left: 8.1%;
+  top: 45.8%;
+}
+.sh__callout--fence {
+  left: 25.8%;
+  top: 68.6%;
+}
+.sh__dot {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow:
+    0 0 0 4px rgb(251 113 133 / 0.25),
+    0 0 0 1px #07070c;
+}
+.sh__chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-inline-start: 28px;
+  padding: 0.45rem 0.85rem 0.45rem 0.65rem;
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  background: rgb(16 16 25 / 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px -8px rgb(0 0 0 / 0.8);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.sh__chip::before {
+  content: "";
+  position: absolute;
+  inset-inline-end: 100%;
+  top: 50%;
+  width: 28px;
+  border-top: 1px dashed var(--accent);
+}
+.sh__chip .icon {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--accent);
+}
+
+/* The one effect on the site, extended to the labels. */
+@media (prefers-reduced-motion: no-preference) {
+  .sh__stage .window,
+  .sh__stage .phone {
+    animation: sh-rise 200ms ease-out both;
+  }
+  .sh__callouts {
+    animation: sh-fade 200ms ease-out 150ms both;
+  }
+}
+@keyframes sh-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes sh-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Small laptops: a narrower copy column leaves the screenshot room. */
+@media (max-width: 1100px) {
+  .sh__grid {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
+    gap: 3rem;
+  }
+  .sh__product {
+    --sh-bleed: 1.8;
+  }
+  .sh__chip {
+    gap: 0.35rem;
+    padding: 0.35rem 0.7rem 0.35rem 0.55rem;
+    font-size: 0.8125rem;
+  }
+  .sh__chip { margin-inline-start: 20px; }
+  .sh__chip::before { width: 20px; }
+  .sh__stage .phone { width: 140px; }
+}
+
+/* Tablet: one column, the window fits the page. */
+@media (max-width: 900px) {
+  .sh__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.75rem;
+  }
+  .sh__copy {
+    max-width: 38rem;
+  }
+  .sh__product {
+    --sh-bleed: 1;
+  }
+  /* The screenshot is shorter here, so the history label moves up to the
+     balance to keep the three labels apart. */
+  .sh__callout--history {
+    left: 11.6%;
+    top: 29.4%;
+  }
+  .sh__stage .phone {
+    inset-inline-end: -0.5rem;
+    width: 150px;
+  }
+  .sh__product {
+    padding-bottom: 3.5rem;
+  }
+  .sh__stage .phone {
+    bottom: -3.5rem;
+  }
+}
+
+/* Phone: the phone screenshot on the left, the three points as a list on its
+   right. */
+@media (max-width: 640px) {
+  .sh__actions .btn {
+    flex: 1 1 100%;
+  }
+  .sh__stats div {
+    padding-inline: 1rem;
+  }
+  .sh__stats dd {
+    font-size: 1.3rem;
+  }
+  .sh__product {
+    padding-bottom: 0;
+  }
+  .sh__grid {
+    gap: 2.25rem;
+  }
+  .sh__proof {
+    margin-top: 1.5rem;
+  }
+  .sh__stage {
+    display: grid;
+    grid-template-columns: minmax(0, min(11.5rem, 44%)) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+  }
+  .sh__stage .window {
+    display: none;
+  }
+  .sh__stage .phone {
+    position: relative;
+    inset: auto;
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  }
+  .sh__callouts {
+    position: static;
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    direction: inherit;
+  }
+  .sh__callout {
+    position: static;
+    transform: none;
+  }
+  .sh__dot,
+  .sh__chip::before {
+    display: none;
+  }
+  .sh__chip {
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    white-space: normal;
+    font-size: 0.9375rem;
+    line-height: 1.35;
+  }
+  .sh__chip .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.35rem;
+    margin-top: -0.2rem;
+    border: 1px solid var(--accent-line);
+    border-radius: 50%;
+    background: var(--accent-soft);
+    box-sizing: border-box;
+  }
+}

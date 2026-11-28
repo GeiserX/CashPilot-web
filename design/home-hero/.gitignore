@@ -1,0 +1,5 @@
+# Build assets: restore them with restore-assets.sh, never commit them.
+*/_astro/
+*/favicon.svg
+*/apple-touch-icon.png
+*/og.png

@@ -1,0 +1,78 @@
+/* Design 4: three steps. Replaces the hero text block only; the shot keeps its build markup and scoped CSS. */
+.h4{display:flex;flex-direction:column;align-items:center;text-align:center}
+.h4__title{max-width:22ch;font-size:clamp(2.35rem,5vw,3.6rem);line-height:1.04;letter-spacing:-.04em}
+.h4__lead{margin-top:.9rem;max-width:36rem;color:var(--muted);font-size:clamp(1.0625rem,1.5vw,1.1875rem);line-height:1.5}
+
+/* The strip: three open columns on one rail, no boxes, so uneven text lengths leave no empty cards. */
+.h4-steps{list-style:none;margin:clamp(1.75rem,3.5vw,2.4rem) 0 0;padding:0;width:100%;max-width:1000px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(1rem,3vw,2.5rem)}
+.h4-step{--rail:5.1rem;position:relative;display:flex;flex-direction:column;align-items:center;padding:0 .25rem}
+.h4-step__art{height:50px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:.8rem}
+.h4-step__num{position:relative;z-index:1;display:grid;place-items:center;width:2rem;height:2rem;border-radius:999px;
+  background:var(--bg);border:1px solid var(--accent-line);box-shadow:0 0 0 4px var(--bg),0 0 18px rgb(251 113 133 / .25);
+  color:var(--accent);font-weight:700;font-size:.9375rem;line-height:1}
+/* rail segments run between the number badges */
+.h4-step:not(:last-child)::after{content:"";position:absolute;top:calc(50px + .8rem + 1rem);height:1px;
+  inset-inline-start:calc(50% + 1.5rem);width:calc(100% - 3rem + clamp(1rem,3vw,2.5rem));
+  background:linear-gradient(90deg,var(--accent-line),rgb(255 152 0 / .35))}
+[dir="rtl"] .h4-step:not(:last-child)::after{background:linear-gradient(270deg,var(--accent-line),rgb(255 152 0 / .35))}
+.h4-step__title{margin-top:.7rem;font-weight:700;color:var(--text);font-size:1.125rem;line-height:1.3}
+.h4-step__text{margin-top:.25rem;max-width:19rem;color:var(--muted);font-size:.9375rem;line-height:1.5}
+.h4-step__note{display:flex;gap:.45rem;align-items:flex-start;justify-content:center;max-width:19rem;margin-top:.75rem;padding:.55rem .75rem;
+  border:1px solid var(--border);border-radius:var(--radius-sm);background:rgb(16 16 25 / .7);
+  color:var(--faint);font-size:.8125rem;line-height:1.45;text-align:start}
+.h4-step__note .icon{flex:none;width:1rem;height:1rem;margin-top:.1rem}
+
+/* tiny visuals, all decorative, no text */
+.h4-win{display:block;width:108px;border:1px solid var(--border-strong);border-radius:8px;background:#0d0d14;overflow:hidden;text-align:start}
+.h4-win__bar{display:flex;gap:3px;padding:5px 6px;background:#15151f}
+.h4-win__bar i{width:5px;height:5px;border-radius:50%;background:#3a3a50}
+.h4-win__body{display:flex;align-items:center;gap:6px;padding:8px 8px 10px}
+.h4-win__body .icon{width:14px;height:14px;color:var(--accent);flex:none}
+.h4-win__track{flex:1;height:5px;border-radius:9px;background:var(--surface-2);overflow:hidden}
+.h4-win__track span{display:block;width:72%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ff9800,var(--accent))}
+[dir="rtl"] .h4-win__track span{margin-inline-start:auto;background:linear-gradient(270deg,#ff9800,var(--accent))}
+.h4-tiles{display:flex;gap:6px}
+.h4-tile{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--faint)}
+.h4-tile .icon{width:17px;height:17px}
+.h4-tile.is-on{border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent)}
+.h4-bars{display:flex;align-items:flex-end;gap:5px;height:46px;padding:0 4px 2px;border-bottom:1px solid var(--border-strong)}
+.h4-bars i{width:9px;height:var(--h);border-radius:3px 3px 1px 1px;background:var(--border-strong)}
+.h4-bars i:last-child{background:linear-gradient(180deg,var(--accent),#ff9800)}
+
+.h4__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:clamp(1.5rem,3vw,2rem)}
+
+/* Trust bar: one bordered strip, icons in the accent, so the proof reads as a unit and not as a grey leftover. */
+.h4-trust{display:flex;flex-wrap:wrap;justify-content:center;margin:1.2rem 0 0;padding:.55rem .4rem;
+  border:1px solid var(--border);border-radius:999px;background:rgb(16 16 25 / .6)}
+.h4-trust div{display:flex;flex-direction:row-reverse;align-items:center;gap:.4rem;padding:.1rem 1rem;font-size:.9375rem;position:relative}
+.h4-trust div + div::after{content:"";position:absolute;inset-inline-start:0;top:22%;bottom:22%;border-inline-start:1px solid var(--border-strong)}
+.h4-trust .icon{width:1.05rem;height:1.05rem;color:var(--accent)}
+.h4-trust dd{display:inline-flex;align-items:center;gap:.4rem;margin:0;font-weight:700;color:var(--text)}
+.h4-trust dt{color:var(--muted)}
+
+@media (max-width:900px){
+  .h4-trust{border-radius:var(--radius);gap:.45rem 1.4rem;padding:.7rem 1.1rem}
+  .h4-trust div{padding:0}
+  .h4-trust div + div::after{display:none}
+}
+/* Phone: the rail turns vertical, numbers on the left, visuals dropped. */
+@media (max-width:760px){
+  .h4-steps{grid-template-columns:1fr;max-width:30rem;gap:0;text-align:start}
+  .h4-step{display:grid;grid-template-columns:2rem 1fr;column-gap:.9rem;align-items:start;padding:0 0 1.15rem}
+  .h4-step:last-child{padding-bottom:0}
+  .h4-step__art{display:none}
+  .h4-step__num{grid-row:1 / span 3}
+  .h4-step:not(:last-child)::after{top:2.4rem;bottom:.3rem;inset-inline-start:calc(1rem - .5px);width:1px;height:auto;
+    background:linear-gradient(180deg,var(--accent-line),rgb(255 152 0 / .3))}
+  .h4-step__title{grid-column:2;margin-top:.2rem}
+  .h4-step__text{grid-column:2;max-width:none}
+  .h4-step__note{grid-column:2;max-width:none;justify-content:flex-start}
+  .h4-trust{gap:.55rem 1.1rem;padding:.8rem 1rem;border-radius:var(--radius);max-width:30rem}
+  .h4-trust div{padding:0;font-size:.875rem;white-space:nowrap}
+  .h4-trust div + div::after{display:none}
+}
+@media (max-width:640px){
+  .h4__actions{flex-direction:column;align-items:stretch;width:100%;max-width:22rem}
+  .h4__actions .btn{justify-content:center}
+}

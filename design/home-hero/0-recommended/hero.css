@@ -1,0 +1,439 @@
+/* Home hero, recommended: copy on the left, the real dashboard on the right.
+   Three icon markers sit on the screenshot; the same icons, with words, form
+   the claims row under it. */
+.rh {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2.25rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 4rem);
+}
+.rh__glow {
+  position: absolute;
+  inset: 6% -10% auto 42%;
+  height: 75%;
+  background:
+    radial-gradient(45% 55% at 30% 45%, rgb(251 113 133 / 0.2), transparent 70%),
+    radial-gradient(40% 50% at 70% 35%, rgb(255 152 0 / 0.12), transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.rh__grid {
+  position: relative;
+  display: grid;
+  /* 31rem keeps a long German or Russian title to five or six lines, so the
+     buttons stay in the first screen at 1440. */
+  grid-template-columns: minmax(0, 31rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+/* Copy column */
+.rh__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--accent-line);
+  /* A full pill on one line; a rounded box if a long translation wraps. */
+  border-radius: 1.1rem;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.rh__pill .icon {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  color: var(--accent);
+}
+.rh__title {
+  margin-top: 1.25rem;
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+.rh__title-main {
+  display: block;
+}
+.rh__title-accent {
+  display: inline-block;
+  margin-top: 0.1em;
+  /* Fallback for a browser without background-clip: text (7.6:1). */
+  color: var(--accent);
+  background: linear-gradient(95deg, #fb7185 10%, #fdba74 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rh__lead {
+  margin-top: 1.25rem;
+  max-width: 30rem;
+  color: var(--muted);
+  font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.rh__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+/* .btn is nowrap site-wide; here a long translation ("Развернуть у себя через
+   Docker") wraps inside the button instead of running off a 320 px screen. */
+.rh__actions .btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+.rh__expect {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.rh__expect .icon {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.1rem;
+  color: var(--accent);
+}
+
+/* Proof: a rule, the source line under it, then the numbers, so the column
+   ends on the figures and the date stays visible on touch screens. A long
+   translation of the source line simply wraps. */
+.rh__proof {
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.rh__note {
+  color: var(--faint);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+.rh__stats {
+  display: flex;
+  margin: 0.9rem 0 0;
+}
+.rh__stat {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 0.15rem;
+  padding-inline: 1.1rem;
+}
+.rh__stat:first-child {
+  padding-inline-start: 0;
+}
+.rh__stat + .rh__stat {
+  border-inline-start: 1px solid var(--border);
+}
+.rh__stats dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.rh__stat--lead dd {
+  color: var(--accent);
+}
+.rh__stats dt {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* Product column: the window starts level with the pill and runs past the
+   right edge of the page. */
+.rh__product {
+  --rh-bleed: 2;
+  position: relative;
+  align-self: start;
+  min-width: 0;
+}
+.rh__stage {
+  position: relative;
+  width: calc(100% * var(--rh-bleed));
+}
+.rh__stage .window {
+  position: relative;
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+}
+.rh-phone {
+  display: none;
+}
+
+/* Markers: one icon disc per claim, placed on the screenshot. Positions are
+   percent of hero.png; the build checks the image hash (see NOTES.md). */
+.rh__markers {
+  position: absolute;
+  inset: 35px 1px 1px;
+  pointer-events: none;
+  direction: ltr;
+}
+.rh__marker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: rgb(16 16 25 / 0.92);
+  box-shadow:
+    0 0 0 5px rgb(251 113 133 / 0.18),
+    0 8px 20px -6px rgb(0 0 0 / 0.9);
+  color: var(--accent);
+  transform: translate(-50%, -50%);
+}
+.rh__marker .icon {
+  width: 16px;
+  height: 16px;
+}
+/* Over the Placement grid: services by machine. */
+.rh__marker--fleet {
+  left: 20.6%;
+  top: 68.6%;
+}
+/* Between the machine names at the top of the grid: the fence is set per machine. */
+.rh__marker--fence {
+  left: 23.1%;
+  top: 56.4%;
+}
+/* Over the "Earned per day" chart, above a bar: the history. */
+.rh__marker--history {
+  left: 50.3%;
+  top: 54%;
+}
+
+/* Right to left: the window runs off the left edge, so the right half of the
+   screenshot is the part on screen. The markers move to elements there. */
+[dir="rtl"] .rh__marker--fleet {
+  /* The "Containers up" tile: every container on every machine. */
+  left: 86%;
+  top: 27%;
+}
+[dir="rtl"] .rh__marker--fence {
+  /* The container filter under "Resource use per server". */
+  left: 67.4%;
+  top: 96%;
+}
+[dir="rtl"] .rh__marker--history {
+  /* Above the Oct 27 bar of the chart. */
+  left: 65.1%;
+  top: 55.5%;
+}
+
+/* Claims row under the window: the same icons, with words. */
+.rh__claims {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.rh__claims li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.rh__disc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-top: -0.2rem;
+  border: 1px solid var(--accent-line);
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.rh__disc .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* The one effect on the site, extended to the markers. */
+@media (prefers-reduced-motion: no-preference) {
+  .rh__stage .window,
+  .rh-phone {
+    animation: rh-rise 200ms ease-out both;
+  }
+  .rh__markers {
+    animation: rh-fade 200ms ease-out 150ms both;
+  }
+}
+@keyframes rh-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rh-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Small laptops: a narrower copy column; the claims stack under the window. */
+@media (max-width: 1100px) {
+  .rh__grid {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
+    gap: 3rem;
+  }
+  .rh__product {
+    --rh-bleed: 1.8;
+  }
+  .rh__claims {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+  .rh__claims li {
+    align-items: center;
+  }
+  .rh__disc {
+    margin-top: 0;
+  }
+}
+
+/* Tablet: one column, the whole window fits the page. */
+@media (max-width: 900px) {
+  .rh__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .rh__copy {
+    max-width: 38rem;
+  }
+  .rh__product {
+    --rh-bleed: 1;
+  }
+  .rh__marker {
+    width: 26px;
+    height: 26px;
+    box-shadow:
+      0 0 0 4px rgb(251 113 133 / 0.18),
+      0 8px 20px -6px rgb(0 0 0 / 0.9);
+  }
+  .rh__marker .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .rh__claims {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .rh__claims li {
+    align-items: flex-start;
+  }
+  .rh__disc {
+    margin-top: -0.2rem;
+  }
+}
+
+/* Phone: the claims come up under the lead, so they are in the first screen;
+   the phone screenshot follows the numbers. */
+@media (max-width: 640px) {
+  .rh__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .rh__copy,
+  .rh__product {
+    display: contents;
+  }
+  .rh__pill { order: 1; align-self: flex-start; font-size: 0.8125rem; }
+  .rh__title { order: 2; }
+  .rh__lead { order: 3; }
+  .rh__claims { order: 4; }
+  .rh__actions { order: 5; }
+  .rh__expect { order: 6; }
+  .rh__proof { order: 7; }
+  .rh-phone { order: 8; }
+  .rh__stage {
+    display: none;
+  }
+  .rh__lead {
+    margin-top: 1rem;
+  }
+  .rh__claims {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.55rem;
+    margin-top: 1.15rem;
+  }
+  /* A thin rail joins the three discs, so the list reads as one unit. */
+  .rh__claims::before {
+    content: "";
+    position: absolute;
+    inset-block: 15px;
+    inset-inline-start: 14.5px;
+    border-inline-start: 1px solid var(--accent-line);
+  }
+  .rh__claims li {
+    position: relative;
+    align-items: center;
+    font-size: 0.9375rem;
+  }
+  .rh__disc {
+    margin-top: 0;
+    background: var(--bg);
+    box-shadow: inset 0 0 0 30px var(--accent-soft);
+  }
+  .rh__actions {
+    margin-top: 1.4rem;
+  }
+  .rh__actions .btn {
+    flex: 1 1 100%;
+  }
+  .rh__proof {
+    margin-top: 1.5rem;
+  }
+  .rh .rh-phone {
+    display: block;
+    align-self: center;
+    width: 100%;
+    max-width: 260px;
+    margin-top: 2.25rem;
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  }
+}
+
+/* Small phones: the three figures stay on one line while they fit, and wrap
+   cleanly when a long translation does not. */
+@media (max-width: 520px) {
+  .rh__stats {
+    flex-wrap: wrap;
+    gap: 0.9rem 1.6rem;
+  }
+  /* No dividers here: a figure that wraps to the next line would start
+     with a stray rule. */
+  .rh__stat,
+  .rh__stat:first-child {
+    padding-inline: 0;
+  }
+  .rh__stat + .rh__stat {
+    border-inline-start: 0;
+  }
+  .rh__stats dd {
+    font-size: 1.3rem;
+  }
+}
